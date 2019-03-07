@@ -28,7 +28,7 @@
                 this.count++;
 
                 var headers = {
-                    "RequestVerificationToken": $('input:hidden[name="__RequestVerificationToken"]').val()
+                    "RequestVerificationToken": document.getElementsByName("__RequestVerificationToken")[0].value
                 }
 
                 axios.post('/counter?counter='+this.count, null, {headers: headers});
